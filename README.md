@@ -4,25 +4,25 @@ Regression and classification models for residential real estate, built on the K
 
 Two related problems are addressed:
 
-1. **Price estimation** — predict the exact sale price of a house from its physical and location attributes.
-2. **Price band classification** — label a house as `High_Price` ($450,000 or more) or `Low_Price` (below that), and predict the label directly.
+1. **Price estimation**: predict the exact sale price of a house from its physical and location attributes.
+2. **Price band classification**: label a house as `High_Price` ($450,000 or more) or `Low_Price` (below that), and predict the label directly.
 
 Rather than tuning a single model by trial and error, each problem is worked through with several model configurations trained and evaluated under the same conditions, so the comparison between architectures is part of the evidence, not an afterthought.
 
 ## Results
 
-**Price estimation** — linear regression vs. three neural network configurations (scikit-learn + Keras):
+**Price estimation**: linear regression compared against three neural network configurations (scikit-learn + Keras).
 
 | Model | Hidden layers | MAE ($) | R² |
 |---|---|---|---|
-| Linear regression | — | 125,006 | 0.693 |
+| Linear regression | n/a | 125,006 | 0.693 |
 | nn_shallow | 64, 32 (relu) | 105,056 | 0.779 |
 | **nn_wide_tanh** | 100 (tanh), 80 (relu) | **80,004** | **0.851** |
 | nn_deep_dropout | 128, 64, 32 (relu, dropout 0.2) | 98,333 | 0.808 |
 
 ![Test MAE by neural network configuration](images/regression_mae_comparison.png)
 
-**Price band classification** — random forest vs. multilayer perceptron, three configurations each:
+**Price band classification**: random forest compared against a multilayer perceptron, three configurations each.
 
 | Model | Accuracy | Precision | Recall | F1 |
 |---|---|---|---|---|
