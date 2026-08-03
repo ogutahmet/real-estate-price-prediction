@@ -1,0 +1,6 @@
+data/Part1_house_price.csv
+.ipynb_checkpoints/
+__pycache__/
+.DS_Store
+.venv/
+venv/
